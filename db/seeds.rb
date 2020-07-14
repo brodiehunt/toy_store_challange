@@ -7,12 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 for i in 1..20
+  User.create(
+    email: "user#{i}@gmail.com",
+    password: "password#{i}"
+  )
   Toy.create(
-    name: Faker::FunnyName.name,
-    description: Faker::Quote.famous_last_words,
+    name: "Toy #{i}"
+    description: "Description #{i}",
     picture: "No Picture",
     date_posted: Faker::Date.between(from: '2020-01-01', to: '2020-07-13'),
-    user: Faker::Name.name
+    user_id: i
   )
   puts "Created #{i} records"
 end
