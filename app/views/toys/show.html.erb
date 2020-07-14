@@ -1,0 +1,10 @@
+<h1>Show A Single Toy</h1>
+
+<%= @toy[:name] %> <%= link_to "Edit", edit_toy_path %>
+<br>
+<form action="<%=toy_path(params[:id])%>" method="POST">
+  <input type="hidden" value="<%= form_authenticity_token%>" name="authenticity_token">
+  <input type="hidden" name="_method" value="DELETE">
+  <label> Delete This Toy </label>
+  <input type="submit" name="Destroy">
+</form>

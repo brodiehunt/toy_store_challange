@@ -1,0 +1,23 @@
+<h1>This is Edit Page</h1>
+<%= @toy[:name] %>
+<form action="<%=toy_path(params[:id])%>" method="POST">
+  <input type="hidden" value="<%= form_authenticity_token%>" name="authenticity_token">
+  <input type="hidden" name="_method" value="PATCH">
+  <label>Name</label>
+  <input type="string" name="toy[name]" value="<%= @toy[:name]%>">
+  <br>
+  <label> Description </label>
+  <input type="text" name="toy[description]" value="<%= @toy[:description]%>">
+  <br>
+  <label> Picture </label>
+  <input type="string" name="toy[picture]" value="<%= @toy[:picture]%>">
+  <br>
+  <label> Date Posted </label>
+  <input type="string" name="toy[date_posted]" value="<%= @toy[:date_posted]%>">
+  <br>
+  <label> User </label>
+  <input type="string" name="toy[user]" value="<%= @toy[:user]%>">
+  <br>
+  <label> Submit </label>
+  <input type="submit" name="Update">
+</form>

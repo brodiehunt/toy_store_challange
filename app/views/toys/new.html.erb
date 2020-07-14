@@ -1,0 +1,21 @@
+<h1>Create A New Toy</h1>
+<form action="<%=toys_path%>" method="POST">
+  <input type="hidden" value="<%= form_authenticity_token%>" name="authenticity_token">
+  <label>Name</label>
+  <input type="string" name="toy[name]">
+  <br>
+  <label> Description </label>
+  <input type="text" name="toy[description]">
+  <br>
+  <label> Picture </label>
+  <input type="string" name="toy[picture]">
+  <br>
+  <label> Date Posted </label>
+  <input type="string" name="toy[date_posted]">
+  <br>
+  <label> User </label>
+  <input type="string" name="toy[user]">
+  <br>
+  <label> Submit </label>
+  <input type="submit" name="create">
+</form>
