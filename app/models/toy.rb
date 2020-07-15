@@ -1,3 +1,3 @@
 class Toy < ApplicationRecord
-  has_one :User
+  has_one :user
 end

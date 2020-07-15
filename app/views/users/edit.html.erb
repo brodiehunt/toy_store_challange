@@ -1,0 +1,10 @@
+<h1>Edit Single User</h1>
+<form action="<%=user_path(params[:id])%>" method="POST">
+  <input type="hidden" value="<%=form_authenticity_token%>" name="authenticity_token">
+  <input type="hidden" value="PATCH" name="_method">
+  <label>User Email</label>
+  <input type="string" name="user[email]" value="<%=@user[:email]%>">
+  <label>Password</label>
+  <input type="string" name="user[password]" value="<%=@user[:password]%>">
+  <label>Submit</label>
+  <input type="submit" name="update">

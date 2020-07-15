@@ -12,7 +12,7 @@ for i in 1..20
     password: "password#{i}"
   )
   Toy.create(
-    name: "Toy #{i}"
+    name: "Toy #{i}",
     description: "Description #{i}",
     picture: "No Picture",
     date_posted: Faker::Date.between(from: '2020-01-01', to: '2020-07-13'),

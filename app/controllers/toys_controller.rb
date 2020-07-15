@@ -8,7 +8,7 @@ class ToysController < ApplicationController
   def create
     puts params
     Toy.create(name: params[:toy][:name], description: params[:toy][:description], picture: params[:toy][:picture],
-                date_posted: params[:toy][:date_posted], user: params[:toy][:user])
+                date_posted: params[:toy][:date_posted], user_id: params[:toy][:user_id])
     redirect_to toy_path(Toy.maximum(:id))
   end
   
@@ -29,7 +29,7 @@ class ToysController < ApplicationController
     puts params
     @toy = Toy.find(params[:id].to_i)
     @toy.update(name: params[:toy][:name], description: params[:toy][:description], picture: params[:toy][:picture],
-      date_posted: params[:toy][:date_posted], user: params[:toy][:user])
+      date_posted: params[:toy][:date_posted], user_id: params[:id])
     redirect_to toy_path(params[:id].to_i)
   end
 
